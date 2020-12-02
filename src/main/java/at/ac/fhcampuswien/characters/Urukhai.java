@@ -7,11 +7,17 @@ package at.ac.fhcampuswien.characters;
 public class Urukhai extends Orc implements Comparable<Urukhai> {
 
     private String name;
+    private int age;
     private String weapon;
 
-    public Urukhai(String name){
+    public Urukhai(String name, int age){
         super("Isengart");  // call base class constructor
+        this.age = age;
         this.name = name;
+    }
+
+    public int getAge(){
+        return this.age;
     }
 
     @Override
@@ -26,10 +32,17 @@ public class Urukhai extends Orc implements Comparable<Urukhai> {
 
     @Override
     public int compareTo(Urukhai o) {
-        if(this.name.equals(o.name)){
+        if(this.age == o.getAge()) {
             return 0;
-        } else {
+        } else if(this.age < o.getAge()) {
             return -1;
+        } else {
+            return 1;
         }
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + " " + this.age;
     }
 }
