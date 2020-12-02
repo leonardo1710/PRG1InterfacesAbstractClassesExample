@@ -3,6 +3,10 @@ package at.ac.fhcampuswien.characters;
 public abstract class Orc implements ICreature {
     protected String location;  // all subclasses can access this variable
 
+    public Orc(String location){
+        this.location = location;
+    }
+
     public void attackRoar(){
         System.out.println("Orc attack! Grrrr!");
     }
@@ -14,14 +18,16 @@ public abstract class Orc implements ICreature {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " : " + this.location;  // get the instantiated class name
+        return this.getClass().getSimpleName();
     }
-
-    public abstract void eat(); // all subclasses MUST implement this method
 
     @Override
     public void walk(int distance) {
-        System.out.println("Orc walk " + distance*2);   // implementation of method from Interface ICreature
+        System.out.println("Orc walk " + distance);
+    }
+
+    protected void eat(){
+        System.out.println("mhhh lecker Hobbits.");
     }
 
 }

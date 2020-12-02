@@ -7,12 +7,9 @@ package at.ac.fhcampuswien.characters;
 public class Snaga extends Orc {
 
     public Snaga() {
+        super("Nebelgebirge");
         this.location = "Nebelgebirge";
+
+        this.eat();
     }
-
-    @Override
-    public void eat() {
-
-    }
-
 }
